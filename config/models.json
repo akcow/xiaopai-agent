@@ -1,0 +1,109 @@
+{
+  "$schema": "https://pi.dev/schemas/models.schema.json",
+  "providers": {
+    "dashscope": {
+      "name": "阿里云百炼 DashScope（OpenAI 兼容）",
+      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api": "openai-completions",
+      "apiKey": "${DASHSCOPE_API_KEY}",
+      "models": [
+        {
+          "id": "qwen-plus",
+          "name": "通义千问 Plus",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "qwen-flash",
+          "name": "通义千问 Flash",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "qwen-turbo",
+          "name": "通义千问 Turbo",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ]
+    },
+    "zhipu": {
+      "name": "智谱 GLM（OpenAI 兼容，备选）",
+      "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+      "api": "openai-completions",
+      "apiKey": "${ZHIPU_API_KEY}",
+      "models": [
+        {
+          "id": "glm-4-flash",
+          "name": "GLM-4-Flash",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ]
+    },
+    "deepseek": {
+      "name": "DeepSeek（OpenAI 兼容，备选）",
+      "baseUrl": "https://api.deepseek.com/v1",
+      "api": "openai-completions",
+      "apiKey": "${DEEPSEEK_API_KEY}",
+      "models": [
+        {
+          "id": "deepseek-chat",
+          "name": "DeepSeek Chat",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 65536,
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ]
+    }
+  }
+}
