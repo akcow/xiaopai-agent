@@ -1,0 +1,38 @@
+{
+  "name": "xiaopai-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "小派 —— 基于 Pi SDK + MCP 的全能生活助理（天气 / 待办 / 记忆 / 文件）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "dev:watch": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node --no-warnings=ExperimentalWarning dist/src/server.js",
+    "typecheck": "tsc --noEmit",
+    "smoke:mcp": "tsx scripts/smoke-mcp.ts",
+    "smoke:agent": "tsx scripts/smoke-agent.ts",
+    "tools": "tsx scripts/inspect-tools.ts",
+    "shots": "tsx scripts/screenshots.ts",
+    "test": "node --import tsx --test \"tests/unit/*.test.ts\" \"tests/integration/*.test.ts\"",
+    "test:unit": "node --import tsx --test \"tests/unit/*.test.ts\"",
+    "test:integration": "node --import tsx --test \"tests/integration/*.test.ts\"",
+    "test:agent": "node --import tsx --test \"tests/agent/*.test.ts\"",
+    "test:all": "npm test && npm run test:agent"
+  },
+  "dependencies": {
+    "@earendil-works/pi-ai": "1.4.0",
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "playwright": "^1.56.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3"
+  }
+}
