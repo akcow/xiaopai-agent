@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小派 · 会说也会做的生活助理</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">派</span>
+        <div class="brand-text">
+          <h1>小派</h1>
+          <p>会说，也会做的生活助理</p>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge" id="badge-model">模型 …</span>
+        <span class="badge" id="badge-tools">工具 待连接</span>
+        <span class="badge badge-muted" id="badge-session">会话未开始</span>
+        <button class="ghost" id="btn-new" type="button">新建会话</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="chat">
+        <div class="messages" id="messages">
+          <div class="intro" id="intro">
+            <h2>今天想让我做点什么？</h2>
+            <p>我能查天气、管待办、记你的偏好，也能在 workspace/ 里读写文件。</p>
+            <div class="chips">
+              <button class="chip" data-prompt="杭州明天要带伞吗？">杭州明天要带伞吗？</button>
+              <button class="chip" data-prompt="帮我记一下：周三下午三点要交软件工程作业">记一件待办</button>
+              <button class="chip" data-prompt="我住在广州，不吃香菜，记一下">记住我的偏好</button>
+              <button class="chip" data-prompt="我还有哪些待办没做？">我还有什么没做</button>
+            </div>
+          </div>
+        </div>
+
+        <form class="composer" id="composer">
+          <textarea
+            id="input"
+            rows="2"
+            placeholder="问问天气、让我记待办，或者让我写个文件…（Enter 发送，Shift+Enter 换行）"
+          ></textarea>
+          <div class="composer-actions">
+            <span class="status" id="status" data-state="idle">就绪</span>
+            <button type="button" class="ghost" id="btn-abort" hidden>停止</button>
+            <button type="submit" id="btn-send">发送</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card">
+          <div class="card-head">
+            <h2>待办</h2>
+            <button class="link" id="btn-refresh-todo" type="button">刷新</button>
+          </div>
+          <p class="card-hint" id="todo-hint">还没有待办</p>
+          <ul class="list" id="todo-list"></ul>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <h2>长期记忆</h2>
+            <button class="link" id="btn-refresh-mem" type="button">刷新</button>
+          </div>
+          <p class="card-hint" id="mem-hint">还没记住任何事</p>
+          <ul class="list" id="mem-list"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
